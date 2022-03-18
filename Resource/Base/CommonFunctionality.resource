@@ -4,6 +4,7 @@ Documentation   This file handles browsers configuration, resuable scripts
 Library     SeleniumLibrary
 
 *** Variables ***
+
 #global variable
 ${BROWSER_NAME}     chrome
 ${URL}      #https://opensource-demo.orangehrmlive.com/
