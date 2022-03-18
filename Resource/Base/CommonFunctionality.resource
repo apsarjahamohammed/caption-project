@@ -6,11 +6,12 @@ Library     SeleniumLibrary
 *** Variables ***
 #global variable
 ${BROWSER_NAME}     chrome
-${URL}      https://opensource-demo.orangehrmlive.com/
+${URL}      #https://opensource-demo.orangehrmlive.com/
 
 
 *** Keywords ***
-Launch Browser And Navigate To URL
+Launch Browser
+#And Navigate To URL
     IF  '${BROWSER_NAME}'=='edge'
         Set Local Variable    ${driver_name}     msedgedriver.exe
     ELSE IF  '${BROWSER_NAME}'== 'ff'
