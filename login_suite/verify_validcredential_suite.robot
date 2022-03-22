@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation      This suite will handles all the test cases related to valid
-...     credential test for jiomart.
+...     credential test for demoopencart.
 Resource      ../Resource/Base/CommonFunctionality.resource
 Resource        ../Resource/Page/LoginPage.resource
 Test Setup      Launch Browser
