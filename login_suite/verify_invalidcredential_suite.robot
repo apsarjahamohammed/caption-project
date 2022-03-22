@@ -10,8 +10,9 @@ Test Teardown      Close Browser
 Test Template       Verify Invalid Credential Template
 
 *** Test Cases ***
-TC1     mdapsarjaha@gmail.com       ${EMPTY}        //*[@id="account-login"]/div[1] #Warning: No match for E-Mail Address and/or Password.
-TC2     ${EMPTY}        apsar123        #Warning: No match for E-Mail Address and/or Password.
+TC1     mdapsarjaha@gmail.com       ${EMPTY}       Password is required.
+TC2     ${EMPTY}        apsar123        An email address required.
+TC3     apsarjaha@gmail.com     abcdefgh    Invalid password
 
 *** Keywords ***
 Verify Invalid Credential Template
@@ -24,7 +25,7 @@ Verify Invalid Credential Template
     Click Button    xpath=//[@type="submit"]
     #Click Element   xpath=//*[@id="account-login"]/div[1] //*[@id="account-login"]/div[1]
 
-    #Validate Error Message    ${expected_error}
+    Page Should Contain    ${expected_error}
 
 
     [Teardown]  close Window
