@@ -10,7 +10,6 @@ Test Teardown      Close Browser
 valid reg
     Click Element    class=caret
 
-    #Click Element    class=class="dropdown-menu dropdown-menu-right"
     Click Element    xpath=//*[@id="top-links"]/ul/li[2]/ul/li[1]
     Input Text    id=input-firstname    apsar jaha
     Input Text    id=input-lastname    mohammed
