@@ -1,6 +1,6 @@
 *** Settings ***
 Documentation      This suite will handles all the test cases related to valid
-...     credential test for jiomart.
+...     credential test for demoopencart.
 Resource      ../Resource/Base/CommonFunctionality.resource
 
 Library     DataDriver      file=../test_data/demoopencart.xlsx      sheet_name=AddressBook
