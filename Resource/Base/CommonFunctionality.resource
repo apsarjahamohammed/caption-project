@@ -1,18 +1,14 @@
 *** Settings ***
-Documentation   This file handles browsers configuration, resuable scripts
+Documentation   This file handles browser configuration, resuable scripts.
 
 Library     SeleniumLibrary
 
 *** Variables ***
-
-#global variable
 ${BROWSER_NAME}     chrome
-${URL}      #https://opensource-demo.orangehrmlive.com/
-
+${URL}      https://demo.opencart.com/index.php?route=common/home
 
 *** Keywords ***
 Launch Browser
-#And Navigate To URL
     IF  '${BROWSER_NAME}'=='edge'
         Set Local Variable    ${driver_name}     msedgedriver.exe
     ELSE IF  '${BROWSER_NAME}'== 'ff'
@@ -22,11 +18,12 @@ Launch Browser
     END
 
     Open Browser    browser=${BROWSER_NAME}     executable_path=${EXECDIR}${/}driver${/}${driver_name}
-    Open Browser    browser=chrome      executable_path=${EXECDIR}${/}driver${/}chromedriver.exe
     Maximize Browser Window
     Set Selenium Implicit Wait    30s
-    Set Screenshot Directory    ${EXECDIR}${/}screenshots
-    Go To    ${URL}
+    Set Screenshot Directory    ${EXECDIR}${/}screenshot
+    Go To    url=${URL}
+    #Set Screenshot Directory    ${EXECDIR}${/}screenshot
+    Maximize Browser Window
 
 
 
