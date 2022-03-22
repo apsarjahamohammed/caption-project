@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Robot 4.1.3 (Python 3.10.2 on win32)" generated="20220321 16:43:54.969" rpa="false" schemaversion="2">
+<suite id="s1" name="Verify Validcredential Suite" source="E:\caption_project\robot_framework\login_suite\verify_validcredential_suite.robot">
+<test id="s1-t1" name="Verify Valid Credential Test">
+<kw name="Launch Browser" library="CommonFunctionality" type="SETUP">
+<if>
+<branch type="IF" condition="'${BROWSER_NAME}'=='edge'">
+<kw name="Set Local Variable" library="BuiltIn">
+<arg>${driver_name}</arg>
+<arg>msedgedriver.exe</arg>
+<doc>Makes a variable available everywhere within the local scope.</doc>
+<status status="NOT RUN" starttime="20220321 16:43:55.734" endtime="20220321 16:43:55.734"/>
+</kw>
+<status status="NOT RUN" starttime="20220321 16:43:55.734" endtime="20220321 16:43:55.734"/>
+</branch>
+<branch type="ELSE IF" condition="'${BROWSER_NAME}'== 'ff'">
+<kw name="Set Local Variable" library="BuiltIn">
+<arg>${driver_name}</arg>
+<arg>geckodriver.exe</arg>
+<doc>Makes a variable available everywhere within the local scope.</doc>
+<status status="NOT RUN" starttime="20220321 16:43:55.734" endtime="20220321 16:43:55.734"/>
+</kw>
+<status status="NOT RUN" starttime="20220321 16:43:55.734" endtime="20220321 16:43:55.734"/>
+</branch>
+<branch type="ELSE">
+<kw name="Set Local Variable" library="BuiltIn">
+<arg>${driver_name}</arg>
+<arg>chromedriver.exe</arg>
+<doc>Makes a variable available everywhere within the local scope.</doc>
+<msg timestamp="20220321 16:43:55.734" level="INFO">${driver_name} = chromedriver.exe</msg>
+<status status="PASS" starttime="20220321 16:43:55.734" endtime="20220321 16:43:55.734"/>
+</kw>
+<status status="PASS" starttime="20220321 16:43:55.734" endtime="20220321 16:43:55.734"/>
+</branch>
+<status status="PASS" starttime="20220321 16:43:55.734" endtime="20220321 16:43:55.734"/>
+</if>
+<kw name="Open Browser" library="SeleniumLibrary">
+<arg>browser=${BROWSER_NAME}</arg>
+<arg>executable_path=${EXECDIR}${/}driver${/}${driver_name}</arg>
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<msg timestamp="20220321 16:43:55.734" level="INFO">Opening browser 'chrome' to base url 'None'.</msg>
+<msg timestamp="20220321 16:43:55.797" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20220321 16:43:55.813" level="FAIL">WebDriverException: Message: 'chromedriver.exe' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+</msg>
+<status status="FAIL" starttime="20220321 16:43:55.734" endtime="20220321 16:43:55.813"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20220321 16:43:55.813" endtime="20220321 16:43:55.813"/>
+</kw>
+<kw name="Set Selenium Implicit Wait" library="SeleniumLibrary">
+<arg>30s</arg>
+<doc>Sets the implicit wait value used by Selenium.</doc>
+<status status="NOT RUN" starttime="20220321 16:43:55.813" endtime="20220321 16:43:55.813"/>
+</kw>
+<kw name="Set Screenshot Directory" library="SeleniumLibrary">
+<arg>${EXECDIR}${/}screenshot</arg>
+<doc>Sets the directory for captured screenshots.</doc>
+<status status="NOT RUN" starttime="20220321 16:43:55.813" endtime="20220321 16:43:55.813"/>
+</kw>
+<kw name="Go To" library="SeleniumLibrary">
+<arg>url=${URL}</arg>
+<doc>Navigates the current browser window to the provided ``url``.</doc>
+<status status="NOT RUN" starttime="20220321 16:43:55.813" endtime="20220321 16:43:55.813"/>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="NOT RUN" starttime="20220321 16:43:55.813" endtime="20220321 16:43:55.813"/>
+</kw>
+<status status="FAIL" starttime="20220321 16:43:55.734" endtime="20220321 16:43:55.813"/>
+</kw>
+<kw name="Close Window" library="SeleniumLibrary" type="TEARDOWN">
+<doc>Closes currently opened and selected browser window/tab.</doc>
+<msg timestamp="20220321 16:43:55.813" level="INFO">Cannot capture screenshot because no browser is open.</msg>
+<msg timestamp="20220321 16:43:55.813" level="FAIL">No browser is open.</msg>
+<status status="FAIL" starttime="20220321 16:43:55.813" endtime="20220321 16:43:55.813">No browser is open.</status>
+</kw>
+<status status="FAIL" starttime="20220321 16:43:55.734" endtime="20220321 16:43:55.813">Setup failed:
+WebDriverException: Message: 'chromedriver.exe' executable needs to be in PATH. Please see https://sites.google.com/a/chromium.org/chromedriver/home
+
+
+Also teardown failed:
+No browser is open.</status>
+</test>
+<doc>This suite will handles all the test cases related to valid
+credential test for orangehrm. Test case - TC_OH_2</doc>
+<status status="FAIL" starttime="20220321 16:43:54.984" endtime="20220321 16:43:55.828"/>
+</suite>
+<statistics>
+<total>
+<stat pass="0" fail="1" skip="0">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat pass="0" fail="1" skip="0" id="s1" name="Verify Validcredential Suite">Verify Validcredential Suite</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
